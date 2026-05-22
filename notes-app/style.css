@@ -1,0 +1,67 @@
+body{
+    background-color: rgb(223, 199, 221);
+    text-align: center;
+}
+
+#title
+{
+    font-family: monospace;
+}
+
+#container
+{
+    background-color: aliceblue;
+    width: fit-content;
+    padding: 10px;
+     border: 2px solid black;
+  
+    margin: auto;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#notes
+{
+    display: block;
+}
+
+button
+{
+ margin: 20px;
+ background-color: rgb(243, 211, 246);
+ border-radius: 10px;
+ padding: 10px;
+ font-family: 'Courier New', Courier, monospace;
+ max-width: 100px;
+   
+}
+
+.newNotes
+{
+        background-color: rgb(255, 255, 255);
+        width: fit-content;
+        padding: 10px;
+        min-width: 300px;
+        max-width: 305px;
+        border: 2px solid black;
+        box-shadow: 10px 5px 5px  rgb(130, 127, 127);
+        margin: auto;
+        align-items: center;
+        border-radius: 10px;
+        margin-bottom: 20px;
+}
+
+
+.newNotes:hover
+{
+ scale: 1.05;
+}
+
+button:hover{
+    
+    background-color: rgb(203, 203, 203);
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out 0.3s; 
+}
+
+
