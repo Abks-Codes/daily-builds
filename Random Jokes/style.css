@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(223, 199, 221);
+    text-align: center;
+}
+
+#jokesCounter{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: aliceblue;
+    width: fit-content;
+    padding: 10px;
+    border: 2px solid black;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#container, #title
+{
+    background-color: aliceblue;
+    width: fit-content;
+    padding: 10px;
+     border: 2px solid black;
+    margin: auto;
+    align-items: center;
+    border-radius: 10px;
+}
+
+button
+{
+ margin: 20px;
+ background-color: rgb(243, 211, 246);
+ border-radius: 10px;
+ padding: 10px;
+ font-family: 'Courier New', Courier, monospace;
+ max-width: 100px;
+   
+}
+
+#jokeText
+{
+    font-family: monospace;
+    background-color: rgb(253, 235, 255);
+    margin: 20px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+
+
+}
