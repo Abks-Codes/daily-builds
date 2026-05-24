@@ -32,4 +32,5 @@ A simple app that fetches random jokes from an API.
 
 **Built with:** HTML, CSS, JavaScript, Fetch API
 
-<img width="600" alt="Random Joke App Screenshot" src="https://github.com/user-attachments/assets/e72408c7-f7bd-41eb-8d87-b3474fab30bc" />
+<img width="1080" height="804" alt="image" src="https://github.com/user-attachments/assets/5c30c999-67fb-477c-94d3-636e166e5736" />
+
