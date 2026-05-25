@@ -47,6 +47,6 @@ A weather app using the OpenWeather API.
 
 **Built with:** HTML, CSS, JavaScript, OpenWeather API
 
-<img width="1060" height="1152" alt="image" src="https://github.com/user-attachments/assets/d7ada2fb-2dec-4ab3-b8d6-514335423121" />
+<img width="600"  alt="image" src="https://github.com/user-attachments/assets/d7ada2fb-2dec-4ab3-b8d6-514335423121" />
 
 
