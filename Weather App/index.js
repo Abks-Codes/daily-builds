@@ -7,7 +7,7 @@ let temp = document.getElementById("temp")
 let cityTitle = document.getElementById("cityTitle")
 
 button.addEventListener('click', async function data() {
-    const apiKey = '0237eee757034298b1fc4b3ea85366bb';
+    const apiKey = 'YOUR_API_KEY';
     const cityName = city.value;
     try{
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`);
