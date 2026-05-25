@@ -34,3 +34,19 @@ A simple app that fetches random jokes from an API.
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/5c30c999-67fb-477c-94d3-636e166e5736" />
 
+### Weather App
+A weather app using the OpenWeather API.
+
+**Features**
+- Search weather by city
+- Live weather data
+- Weather icons
+- Temperature display
+- Error handling for invalid cities
+- Async/await + Fetch API
+
+**Built with:** HTML, CSS, JavaScript, OpenWeather API
+
+<img width="1060" height="1152" alt="image" src="https://github.com/user-attachments/assets/d7ada2fb-2dec-4ab3-b8d6-514335423121" />
+
+
