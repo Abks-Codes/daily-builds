@@ -50,3 +50,8 @@ A weather app using the OpenWeather API.
 <img width="600"  alt="image" src="https://github.com/user-attachments/assets/d7ada2fb-2dec-4ab3-b8d6-514335423121" />
 
 
+### Movie Search App
+A Move search app that searched all the movies for that title.
+
+Still working on it
+
