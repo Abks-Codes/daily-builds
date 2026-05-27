@@ -34,6 +34,8 @@ A simple app that fetches random jokes from an API.
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/5c30c999-67fb-477c-94d3-636e166e5736" />
 
+---
+
 ### Weather App
 A weather app using the OpenWeather API.
 
@@ -48,6 +50,8 @@ A weather app using the OpenWeather API.
 **Built with:** HTML, CSS, JavaScript, OpenWeather API
 
 <img width="600"  alt="image" src="https://github.com/user-attachments/assets/d7ada2fb-2dec-4ab3-b8d6-514335423121" />
+
+---
 
 ### Movie Finder App
 A movie search app that uses the OMDb API to find movies and display detailed movie cards.
