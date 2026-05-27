@@ -23,7 +23,7 @@ button.addEventListener("click", async function getMovie()
 
     for (let movie of data.Search)
     {
-        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=6467afdf&i=${movie.imdbID}`);
+        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=YOUR_API_KEY&i=${movie.imdbID}`);
         const more_data = await imdbID.json();
         
         let card = document.createElement("div");
