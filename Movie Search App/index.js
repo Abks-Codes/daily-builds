@@ -11,7 +11,7 @@ button.addEventListener("click", async function getMovie()
     loading.style.display = 'block';
     document.querySelectorAll('.card').forEach(el => el.remove());
 
-    let response = await fetch(`http://www.omdbapi.com/?apikey=6467afdf&s=${input.value}`);
+    let response = await fetch(`http://www.omdbapi.com/?apikey=[your-key]&s=${input.value}`);
     const data = await response.json();
     
     if(data.response){
