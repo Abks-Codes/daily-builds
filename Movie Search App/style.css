@@ -50,6 +50,27 @@ body {
   padding: 36px 20px 72px;
 }
 
+#loading{
+ font-size: 50px;
+ justify-content: center;
+ margin-top: 10px;
+ display: none;
+}
+
+#addtofavorite
+{
+  font-size: 25px;
+  margin-left: 225px;
+  margin-top: 10px;
+    transition: transform 0.3s ease; 
+}
+
+#addtofavorite:hover
+{
+   transform: scale(1.2); 
+}
+
+
 h1, h2, h3 {
   font-family: 'DM Serif Display', serif;
   color: var(--text-heading);
@@ -185,7 +206,7 @@ button:active {
   transition: transform 0.35s ease;
 }
 
-.card:hover .poster {
+.poster:hover {
   transform: scale(1.04);
 }
 

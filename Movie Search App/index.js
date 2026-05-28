@@ -2,15 +2,18 @@
 
 const input = document.getElementById("input");
 const button = document.getElementById("search");
+let loading = document.getElementById("loading");
 let cards = document.querySelector('.cards');
 let counter = 0;
 
 button.addEventListener("click", async function getMovie()
 {
+    loading.style.display = 'block';
     document.querySelectorAll('.card').forEach(el => el.remove());
 
     let response = await fetch(`http://www.omdbapi.com/?apikey=6467afdf&s=${input.value}`);
     const data = await response.json();
+    
     if(data.response){
         throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -20,10 +23,11 @@ button.addEventListener("click", async function getMovie()
 
 
    
+    loading.style.display = 'none';
 
     for (let movie of data.Search)
     {
-        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=YOUR_API_KEY&i=${movie.imdbID}`);
+        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=[your-key]&i=${movie.imdbID}`);
         const more_data = await imdbID.json();
         
         let card = document.createElement("div");
@@ -35,7 +39,10 @@ button.addEventListener("click", async function getMovie()
         let genre = document.createElement("h3");
         let type = document.createElement("h3");
         let poster = document.createElement("img");
+        let addtofavorite = document.createElement("i");
 
+        addtofavorite.className = 'fa-regular fa-heart';
+        addtofavorite.id = 'addtofavorite';
         title.textContent = `Title : ${movie.Title}`;
         year.textContent = `Year: ${movie.Year}`;
         rated.textContent = `Rated: ${more_data.Rated}`;
@@ -45,10 +52,14 @@ button.addEventListener("click", async function getMovie()
         poster.src = more_data.Poster;
         poster.className = 'poster';
 
+        addtofavorite.addEventListener('click', function favorites(){
+             addtofavorite.className = 'fa-solid fa-heart';
+        })
+
 
         
 
-
+        card.appendChild(addtofavorite);
         card.appendChild(title);
         card.appendChild(year);
         card.appendChild(rated);
@@ -57,7 +68,7 @@ button.addEventListener("click", async function getMovie()
         card.appendChild(type);
         card.appendChild(poster);
         cards.appendChild(card)
-        console.log(more_data)
+       
         
       counter++;
     }
