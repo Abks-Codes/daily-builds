@@ -53,7 +53,7 @@ A weather app using the OpenWeather API.
 
 ---
 
-###Movie Finder App
+### Movie Finder App
 
 A movie search app that uses the OMDb API to search and display detailed movie cards with posters and extra movie information.
 
