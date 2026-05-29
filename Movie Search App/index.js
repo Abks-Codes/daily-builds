@@ -9,7 +9,7 @@ let counter = 0;
 
 button.addEventListener("click", async function getMovie()
 {
-       notfound.style.display = "block";
+       notfound.style.display = "none";
     
  try{
         loading.style.display = 'block';
