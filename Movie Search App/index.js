@@ -4,14 +4,20 @@ const input = document.getElementById("input");
 const button = document.getElementById("search");
 let loading = document.getElementById("loading");
 let cards = document.querySelector('.cards');
+let notfound = document.getElementById("notFound");
 let counter = 0;
 
 button.addEventListener("click", async function getMovie()
 {
-    loading.style.display = 'block';
+       notfound.style.display = "block";
+    
+ try{
+        loading.style.display = 'block';
     document.querySelectorAll('.card').forEach(el => el.remove());
 
-    let response = await fetch(`http://www.omdbapi.com/?apikey=[your-key]&s=${input.value}`);
+    
+
+    let response = await fetch(`http://www.omdbapi.com/?apikey=[your-api]&s=${input.value}`);
     const data = await response.json();
     
     if(data.response){
@@ -27,7 +33,7 @@ button.addEventListener("click", async function getMovie()
 
     for (let movie of data.Search)
     {
-        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=[your-key]&i=${movie.imdbID}`);
+        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=[your-api]&i=${movie.imdbID}`);
         const more_data = await imdbID.json();
         
         let card = document.createElement("div");
@@ -72,7 +78,17 @@ button.addEventListener("click", async function getMovie()
         
       counter++;
     }
-
+ }
+ catch(error)
+ {
+    console.error("An error occurred:", error.message);
+    notfound.style.display = "block";
+    
+ }
+ finally
+ {
+    console.log("clean up completed")
+ }
     
   
 })

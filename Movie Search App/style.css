@@ -50,6 +50,15 @@ body {
   padding: 36px 20px 72px;
 }
 
+#notFound
+{
+  display: none;
+}
+
+input{
+  text-align: center;
+}
+
 #loading{
  font-size: 50px;
  justify-content: center;
