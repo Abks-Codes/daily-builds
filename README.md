@@ -72,10 +72,8 @@ A movie search app that uses the OMDb API to search movies and display detailed 
 
 **Built with:** HTML, CSS, JavaScript, OMDb API
 
-<img width="600" alt="Movie Finder Screenshot" src="YOUR_IMAGE_LINK_HERE" />
 
-
-<img width="600"  alt="image" src="https://github.com/user-attachments/assets/57ae4ba5-ce2d-4f22-b68a-111bb3825925" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/e9792444-fb71-4f8d-bbac-d5a6a62e4dac" />
 
 
 
