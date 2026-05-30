@@ -5,7 +5,10 @@ const button = document.getElementById("search");
 let loading = document.getElementById("loading");
 let cards = document.querySelector('.cards');
 let notfound = document.getElementById("notFound");
-let counter = 0;
+const favButton = document.getElementById("toggle-favorites");
+let favDiv = document.getElementById("favorites")
+let counter = 0;;
+
 
 button.addEventListener("click", async function getMovie()
 {
@@ -17,7 +20,7 @@ button.addEventListener("click", async function getMovie()
 
     
 
-    let response = await fetch(`http://www.omdbapi.com/?apikey=[your-api]&s=${input.value}`);
+    let response = await fetch(`http://www.omdbapi.com/?apikey=6467afdf&s=${input.value}`);
     const data = await response.json();
     
     if(data.response){
@@ -33,7 +36,7 @@ button.addEventListener("click", async function getMovie()
 
     for (let movie of data.Search)
     {
-        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=[your-api]&i=${movie.imdbID}`);
+        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=6467afdf&i=${movie.imdbID}`);
         const more_data = await imdbID.json();
         
         let card = document.createElement("div");
@@ -47,8 +50,10 @@ button.addEventListener("click", async function getMovie()
         let poster = document.createElement("img");
         let addtofavorite = document.createElement("i");
 
-        addtofavorite.className = 'fa-regular fa-heart';
-        addtofavorite.id = 'addtofavorite';
+
+
+        addtofavorite.className  = 'addtofavorite  fa-regular fa-heart';
+        
         title.textContent = `Title : ${movie.Title}`;
         year.textContent = `Year: ${movie.Year}`;
         rated.textContent = `Rated: ${more_data.Rated}`;
@@ -58,9 +63,7 @@ button.addEventListener("click", async function getMovie()
         poster.src = more_data.Poster;
         poster.className = 'poster';
 
-        addtofavorite.addEventListener('click', function favorites(){
-             addtofavorite.className = 'fa-solid fa-heart';
-        })
+ 
 
 
         
@@ -74,6 +77,34 @@ button.addEventListener("click", async function getMovie()
         card.appendChild(type);
         card.appendChild(poster);
         cards.appendChild(card)
+
+
+       addtofavorite.addEventListener('click', function favorites(){
+            if (addtofavorite.classList.contains("fa-solid"))
+            {
+                
+                 addtofavorite.classList.remove("fa-solid");
+addtofavorite.classList.add("fa-regular");
+                        
+                
+                console.log("hoina");
+
+            }
+            else
+            {
+            
+                favDiv.innerHTML += card.innerHTML;
+                addtofavorite.classList.add("fa-solid");
+addtofavorite.classList.remove("fa-regular");
+
+                console.log("hora")
+            }
+
+            
+               
+
+               
+        })
        
         
       counter++;
@@ -92,3 +123,18 @@ button.addEventListener("click", async function getMovie()
     
   
 })
+
+
+
+favButton.addEventListener('click', function toggleFavorites(){
+ if(favDiv.style.display == 'none')
+ {
+    favDiv.style.display = 'block';
+    console.log("hello")
+ }
+ else
+ {
+    favDiv.style.display = 'none';
+    console.log("not hello")
+ }
+})  

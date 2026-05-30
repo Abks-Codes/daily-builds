@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>K7 Movie Finder</title>
     <link rel="stylesheet" href="style.css">
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
 <body>
 
     <h1 id="title">K7 Movie Finder</h1>
-    <div id="container">
-        <div id="inputs">
-            <input id="input" placeholder="Search for movies">
+
+    <div id="top-row">
+
+        <div id="container">
+            <div id="inputs">
+                <input id="input" placeholder="Search for movies">
+            </div>
+            <div id="button">
+                <button id="search">Search</button>
+            </div>
+            <button id="toggle-favorites">
+                <i class="fas fa-heart"></i> Favourites
+            </button>
         </div>
-        <div id="button">
-            <button id="search">Search</button>
+
+        <div id="favorites">
+            <p id="favorites-heading">My Favourites</p>
         </div>
-        
+
     </div>
+
     <i class="fas fa-spinner fa-spin" id="loading"></i>
-   
     <h2 id="notFound">Movie Not Found</h2>
-    <div class="cards">
-     
-    </div>
-        
-    </div>
+
+    <div class="cards"></div>
+
     <script src="index.js"></script>
 </body>
 </html>
