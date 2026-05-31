@@ -112,17 +112,13 @@ h1, h2, h3 {
 }
 
 #favorites {
-  min-width: 200px;
-  max-width: 260px;
-  width: fit-content;
+  width: 240px;
+  max-height: 80vh;
+  overflow-y: auto;
   text-align: left;
   display: none;
-
-}
-
-#favorites.open {
-  display: block;
-  animation: fadeUp 0.3s ease both;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
 #favorites-heading {
@@ -132,6 +128,61 @@ h1, h2, h3 {
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
+}
+
+#favorites .card {
+  flex-direction: column;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  animation: none;
+  overflow: hidden;
+  width: 100%;
+}
+
+#favorites .card:last-child {
+  margin-bottom: 0;
+}
+
+#favorites .card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+#favorites .poster {
+  width: 100%;
+  height: 140px;
+  aspect-ratio: unset;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0;
+  order: -1;
+  flex-shrink: 0;
+}
+
+#favorites .card h2 {
+  font-size: 0.78rem;
+  padding: 8px 10px 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+  line-height: 1.3;
+  white-space: normal;
+}
+
+#favorites .card h3 {
+  font-size: 0.68rem;
+  padding: 1px 10px;
+  line-height: 1.4;
+  color: var(--text-body);
+  white-space: normal;
+}
+
+#favorites .card h3:last-child {
+  padding-bottom: 10px;
+}
+
+#favorites .addtofavorite {
+  display: none;
 }
 
 #toggle-favorites {
@@ -161,21 +212,17 @@ h1, h2, h3 {
   color: var(--purple-mid);
 }
 
-#addtofavorite {
-  font-size: 20px;
-  margin: 6px 12px 10px auto;
+.addtofavorite {
+  font-size: 18px;
+  margin: 6px 10px 10px auto;
   display: block;
   width: fit-content;
   color: var(--purple-mid);
   cursor: pointer;
   transition: transform 0.25s ease, color 0.2s;
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
 }
 
-#addtofavorite:hover {
+.addtofavorite:hover {
   transform: scale(1.25);
   color: var(--purple-deep);
 }
@@ -274,8 +321,6 @@ button:active {
   transition: transform 0.35s ease;
 }
 
-
-
 .card:hover .poster {
   transform: scale(1.04);
 }
@@ -332,8 +377,7 @@ button:active {
   }
 
   #favorites {
-    max-width: 90vw;
-    width: 100%;
+    width: 90vw;
   }
 }
 

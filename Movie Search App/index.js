@@ -7,7 +7,6 @@ let cards = document.querySelector('.cards');
 let notfound = document.getElementById("notFound");
 const favButton = document.getElementById("toggle-favorites");
 let favDiv = document.getElementById("favorites")
-let counter = 0;;
 
 
 button.addEventListener("click", async function getMovie()
@@ -20,7 +19,7 @@ button.addEventListener("click", async function getMovie()
 
     
 
-    let response = await fetch(`http://www.omdbapi.com/?apikey=6467afdf&s=${input.value}`);
+    let response = await fetch(`https://www.omdbapi.com/?apikey=[your-api]&s=${input.value}`);
     const data = await response.json();
     
     if(data.response){
@@ -32,11 +31,11 @@ button.addEventListener("click", async function getMovie()
 
 
    
-    loading.style.display = 'none';
+
 
     for (let movie of data.Search)
     {
-        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=6467afdf&i=${movie.imdbID}`);
+        let imdbID = await fetch(`https://www.omdbapi.com/?apikey=[your-api]&i=${movie.imdbID}`);
         const more_data = await imdbID.json();
         
         let card = document.createElement("div");
@@ -44,11 +43,12 @@ button.addEventListener("click", async function getMovie()
         let title = document.createElement("h2");
         let year = document.createElement("h3");
         let rated = document.createElement("h3");
-        let realesed = document.createElement("h3");
+        let released = document.createElement("h3");
         let genre = document.createElement("h3");
         let type = document.createElement("h3");
         let poster = document.createElement("img");
         let addtofavorite = document.createElement("i");
+        let favoriteCard;
 
 
 
@@ -57,7 +57,7 @@ button.addEventListener("click", async function getMovie()
         title.textContent = `Title : ${movie.Title}`;
         year.textContent = `Year: ${movie.Year}`;
         rated.textContent = `Rated: ${more_data.Rated}`;
-        realesed.textContent = `Realesed: ${more_data.Released}`;
+        released.textContent = `Released: ${more_data.Released}`;
         genre.textContent = `Genre: ${more_data.Genre}`;
         type.textContent = `Type: ${movie.Type}`;
         poster.src = more_data.Poster;
@@ -72,7 +72,7 @@ button.addEventListener("click", async function getMovie()
         card.appendChild(title);
         card.appendChild(year);
         card.appendChild(rated);
-        card.appendChild(realesed);
+        card.appendChild(released);
         card.appendChild(genre);
         card.appendChild(type);
         card.appendChild(poster);
@@ -82,20 +82,25 @@ button.addEventListener("click", async function getMovie()
        addtofavorite.addEventListener('click', function favorites(){
             if (addtofavorite.classList.contains("fa-solid"))
             {
-                
+                 
                  addtofavorite.classList.remove("fa-solid");
-addtofavorite.classList.add("fa-regular");
-                        
-                
+                 addtofavorite.classList.add("fa-regular");
+                 favoriteCard.remove()
+            
                 console.log("hoina");
 
             }
             else
             {
             
-                favDiv.innerHTML += card.innerHTML;
+                
                 addtofavorite.classList.add("fa-solid");
-addtofavorite.classList.remove("fa-regular");
+                favoriteCard = document.createElement("div");
+                favoriteCard.className = "card";
+                favoriteCard.innerHTML = card.innerHTML;
+                favDiv.appendChild(favoriteCard)
+                addtofavorite.classList.remove("fa-regular");
+                
 
                 console.log("hora")
             }
@@ -107,7 +112,7 @@ addtofavorite.classList.remove("fa-regular");
         })
        
         
-      counter++;
+    
     }
  }
  catch(error)
@@ -118,7 +123,9 @@ addtofavorite.classList.remove("fa-regular");
  }
  finally
  {
+
     console.log("clean up completed")
+        loading.style.display = 'none';
  }
     
   
