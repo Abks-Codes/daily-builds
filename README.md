@@ -55,7 +55,7 @@ A weather app using the OpenWeather API.
 
 ### Movie Finder App
 
-A movie search app built with the OMDb API that displays detailed movie information in dynamically generated cards.
+A movie discovery app built with the OMDb API that allows users to search for movies and view detailed information in dynamically generated movie cards.
 
 **Features**
 
@@ -64,14 +64,19 @@ A movie search app built with the OMDb API that displays detailed movie informat
 * Movie posters
 * Ratings, genres, release dates, and movie type
 * Dynamic card generation
-* Favorite heart system
-* Toggleable favorites panel
+* Favorite heart toggle system
+* Favorites panel
+* Add and remove favorites
 * Loading spinner while fetching data
 * Movie not found handling
-* Multiple API requests using imdbID for detailed information
+* Multiple API requests using imdbID for detailed movie information
+* Responsive layout
 * Async/await + Fetch API
 
 **Built with:** HTML, CSS, JavaScript, OMDb API
+
+<img width="600" alt="Movie Finder Screenshot" src="YOUR_IMAGE_LINK_HERE" />
+
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/c29ad23d-6500-4517-875b-74d74a8826ab" />
 
 
